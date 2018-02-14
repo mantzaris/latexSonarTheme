@@ -1,0 +1,63 @@
+%good to have
+\usepackage{graphicx}
+
+%always on hand
+\usepackage{eucal}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+
+%margins
+\usepackage[margin=1.1cm]{geometry}
+
+%pagenumber position from 'footskip' and configure the page numbers
+\setlength{\footskip}{6pt}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\vspace{1pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
+
+
+%multicol params
+\usepackage{lipsum}
+\setlength{\columnsep}{1.2cm}
+
+%fonts
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{merriweather}
+
+%colors
+\color{green}
+\pagecolor{black}
+
+%section header adjustments
+\usepackage{xcolor}
+\usepackage{sectsty}
+\sectionfont{\color{lightgray}}
+\subsectionfont{\color{lightgray}}
+\subsubsectionfont{\color{lightgray}}
+
+%set the itemize list separations
+\usepackage{paralist}
+\let\itemize\compactitem
+\let\enditemize\endcompactitem
+\let\enumerate\compactenum
+\let\endenumerate\endcompactenum
+\let\description\compactdesc
+\let\enddescription\endcompactdesc
+\pltopsep=3pt
+\plitemsep=1pt
+\plparsep=1pt
+
+%item face symbol
+\renewcommand{\labelitemi}{\large $\diamond$}
+\renewcommand{\labelitemii}{$\diamond$}
+
+%spacing between caption and figure
+\usepackage[font=small,skip=2pt]{caption}
+
+%framing all figures
+\usepackage[framestyle=fbox,framefit=yes,heightadjust=all,framearound=all]{floatrow} 
