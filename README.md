@@ -8,4 +8,4 @@ Currently the sonar is available.
     
 Is what is needed in the preamble to get the style loaded into the compilation
 
-![alt text](latexThemes/pics/sonarThemeEx.png) 
+ ![alt text](https://raw.githubusercontent.com/mantzaris/latexThemes/master/pics/sonarThemeEx.png)
