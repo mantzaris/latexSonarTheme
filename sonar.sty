@@ -61,3 +61,24 @@
 
 %framing all figures
 \usepackage[framestyle=fbox,framefit=yes,heightadjust=all,framearound=all]{floatrow} 
+
+%Changing some important fonts that help the clarity (the code here is taken from the SO tex post https://tex.stackexchange.com/q/8434/1026, which the answer used borrows from cmbright.sty)
+\DeclareSymbolFont      {operators} {OT1}{cmbr}{m}{n}
+\DeclareSymbolFont        {letters} {OML}{cmbrm}{m}{it}
+\SetSymbolFont      {letters}{bold} {OML}{cmbrm}{b}{it}
+\DeclareSymbolFont        {symbols} {OMS}{cmbrs}{m}{n}
+\DeclareMathAlphabet{\mathit} {OT1}{cmbr}{m}{sl}
+\DeclareMathAlphabet{\mathbf} {OT1}{cmbr}{bx}{n}
+\DeclareMathAlphabet{\mathtt} {OT1}{cmtl}{m}{n}
+\DeclareMathAlphabet{\mathbold}{OML}{cmbrm}{b}{it}
+\DeclareMathSymbol{\alpha}{\mathalpha}{letters}{11}
+\DeclareMathSymbol{\beta}{\mathalpha}{letters}{12}
+\DeclareMathSymbol{\gamma}{\mathalpha}{letters}{13}
+\DeclareMathSymbol{\delta}{\mathalpha}{letters}{14}
+\DeclareMathSymbol{\epsilon}{\mathalpha}{letters}{15}
+
+%The sizes of the math font chosen for each text size as a conditional; eg. \DeclareMathSizes{12}{20}{14}{10}  % For size 12 text
+\DeclareMathSizes{9}{12}{6}{4}
+\DeclareMathSizes{10.0}{14}{7}{5}
+\DeclareMathSizes{11}{14}{10}{6}      % For size 11 text
+\DeclareMathSizes{12}{16}{12}{8}     % For size 12 text
