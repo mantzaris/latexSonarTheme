@@ -6,7 +6,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{amsthm}
-
+\usepackage{amsmath}
 
 %margins
 \usepackage[margin=1.1cm]{geometry}
@@ -82,3 +82,8 @@
 \DeclareMathSizes{10.0}{14}{7}{5}
 \DeclareMathSizes{11}{14}{10}{6}      % For size 11 text
 \DeclareMathSizes{12}{16}{12}{8}     % For size 12 text
+
+%equation number size
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\large#1}}
+\makeatother
