@@ -12,12 +12,21 @@
 %margins
 \usepackage[margin=1.1cm]{geometry}
 
+
+
+
+
+
 %pagenumber position from 'footskip' and configure the page numbers
 \setlength{\footskip}{6pt}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+
 \pagestyle{fancy}
 \fancyhf{}
+\fancyhead{}
+\fancyhead[LE,LO]{\vspace{11pt}\textcolor{gray}{\Title }}
+\fancyhead[RE,RO]{\vspace{11pt}\textcolor{gray}{\Author}}% \leftmark}}
 \rfoot{\vspace{1pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
 
 
