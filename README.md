@@ -1,11 +1,10 @@
-# latexThemes
-Some latex themes 
+# A latex theme inspired by a sonar operator view
 
-Currently the sonar is available. 
+Can be imported as a pacakge
 
     \documentclass[twocolumn]{article}
     \usepackage{sonar}
     
-Is what is needed in the preamble to get the style loaded into the compilation
+put that in the preamble to get the style loaded into the compilation
 
  ![alt text](https://raw.githubusercontent.com/mantzaris/latexThemes/master/pics/sonarThemeEx.png)
