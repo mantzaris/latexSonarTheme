@@ -17,8 +17,6 @@
 %\bibliographystyle{plain}
 
 
-
-
 %pagenumber position from 'footskip' and configure the page numbers
 \setlength{\footskip}{6pt}
 \usepackage{fancyhdr}
@@ -104,4 +102,49 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%
+%making a title page
 
+% Add these lines to your preamble
+\RequirePackage{titlesec} % To customize the section title spacing
+\usepackage{titling}
+%\RequirePackage{varwidth}
+\usepackage{varwidth}
+% ...
+
+
+
+\renewcommand\maketitlehooka{%
+  \noindent\vrule height 2.5pt width \textwidth
+}
+
+
+%\newcommand{\wrappedauthor}[1]{\author{\seqsplit{#1}}}
+\let\oldauthor\author
+\renewcommand{\author}[1]{\oldauthor{\begin{varwidth}{\linewidth}\centering\strut#1\strut\end{varwidth}}}
+
+
+% {\color{lightgray}
+% Customize the title page
+\pretitle{% add some rules
+  \begin{center}
+    \Huge\bfseries
+}%, make the fonts bigger, make the title (only) bold
+\posttitle{%
+  \end{center}%
+  \noindent\vrule height 2.5pt width \textwidth
+  \vskip .75em plus .25em minus .25em% increase the vertical spacing a bit, make this particular glue stretchier
+}
+
+
+\predate{%
+  \begin{center}
+    \Large
+}
+\postdate{%
+  \end{center}%
+}
+
+%\postdate{\vspace{2cm}\end{titlepage}\clearpage}
+
+% ...
