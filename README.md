@@ -7,4 +7,5 @@ Can be imported as a pacakge
     
 put that in the preamble to get the style loaded into the compilation
 
- ![alt text](https://raw.githubusercontent.com/mantzaris/latexThemes/master/pics/sonarThemeEx.png)
+ ![alt text](https://raw.githubusercontent.com/mantzaris/latexThemes/master/pics/file0.png)
+  ![alt text](https://raw.githubusercontent.com/mantzaris/latexThemes/master/pics/file1.png)
