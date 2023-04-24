@@ -108,7 +108,6 @@
 % Add these lines to your preamble
 \RequirePackage{titlesec} % To customize the section title spacing
 \usepackage{titling}
-%\RequirePackage{varwidth}
 \usepackage{varwidth}
 % ...
 
@@ -128,13 +127,18 @@
 % Customize the title page
 \pretitle{% add some rules
   \begin{center}
-    \Huge\bfseries
+    \Huge\bfseries\color{lightgray}
 }%, make the fonts bigger, make the title (only) bold
 \posttitle{%
   \end{center}%
   \noindent\vrule height 2.5pt width \textwidth
   \vskip .75em plus .25em minus .25em% increase the vertical spacing a bit, make this particular glue stretchier
 }
+
+
+%\newcommand\@shorttitle{}
+% define \theshorttitle to what is given
+%\newcommand\shorttitle[1]{\renewcommand\@shorttitle{#1}}
 
 
 \predate{%
@@ -147,4 +151,20 @@
 
 %\postdate{\vspace{2cm}\end{titlepage}\clearpage}
 
-% ...
+
+
+% SHORT TITLE
+
+% Define a new command to store the short title
+\makeatletter
+\newcommand{\@shorttitle}{}
+\newcommand{\shorttitle}[1]{\renewcommand{\@shorttitle}{#1}}
+\makeatother
+
+\makeatletter
+\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\@shorttitle}}
+\makeatother
+
+
+
+
