@@ -26,7 +26,8 @@
 \fancyhf{}
 \fancyhead{}
 \fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{ \csname @title\endcsname }}
-\fancyhead[RE,RO]{\vspace{7pt}\textcolor{gray}{ \csname @author\endcsname}}%\Author}}% \leftmark}}
+% authors at top\fancyhead[RE,RO]{\vspace{7pt}\textcolor{gray}{ \csname @author\endcsname}}%\Author}}% \leftmark}}
+\fancyhead[RE,RO]{} %no authors on header
 \rfoot{\vspace{.51pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
 
 
@@ -161,10 +162,23 @@
 \newcommand{\shorttitle}[1]{\renewcommand{\@shorttitle}{#1}}
 \makeatother
 
+%\makeatletter
+%\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\@shorttitle}}
+%\makeatother
+%\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\expandafter\@shorttitle}}
+
+\fancyhf{}
+\fancyhead{}
 \makeatletter
 \fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\@shorttitle}}
 \makeatother
+\fancyhead[RE,RO]{}
+\rfoot{\vspace{.51pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
 
-
+%\fancyhf{}
+%\fancyhead{}
+%\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\@shorttitle}}
+%\fancyhead[RE,RO]{}
+%\rfoot{\vspace{.51pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
 
 
