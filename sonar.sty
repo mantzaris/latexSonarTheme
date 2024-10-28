@@ -167,10 +167,12 @@
 %\makeatother
 %\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\expandafter\@shorttitle}}
 
+\setlength{\headheight}{25pt} % You may need to adjust this value
+
 \fancyhf{}
 \fancyhead{}
 \makeatletter
-\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\@shorttitle}}
+\fancyhead[LE,LO]{\textcolor{gray}{\@shorttitle}}
 \makeatother
 \fancyhead[RE,RO]{}
 \rfoot{\vspace{.51pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
