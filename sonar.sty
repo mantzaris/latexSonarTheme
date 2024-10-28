@@ -9,19 +9,30 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 
-%margins
-\usepackage[margin=1.1cm]{geometry}
+%margins \usepackage[margin=1.1cm]{geometry}
+\usepackage[margin=0.5in, headheight=3pt, footskip=2pt]{geometry}
 
 %bibliography
 \usepackage{natbib}
 %\bibliographystyle{plain}
 
 
+
+
 %pagenumber position from 'footskip' and configure the page numbers
-\setlength{\footskip}{6pt}
+\setlength{\footskip}{20pt}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 
+
+%% Define plain style for title page
+\fancypagestyle{plain}{%
+  \fancyhf{} % Clear all headers and footers
+  \renewcommand{\headrulewidth}{0pt} % Remove header rule
+  \renewcommand{\footrulewidth}{0pt} % Remove footer rule
+}
+
+%%
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead{}
@@ -29,6 +40,45 @@
 % authors at top\fancyhead[RE,RO]{\vspace{7pt}\textcolor{gray}{ \csname @author\endcsname}}%\Author}}% \leftmark}}
 \fancyhead[RE,RO]{} %no authors on header
 \rfoot{\vspace{.51pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
+
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \thispagestyle{plain}% Remove page number from title page
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \let\footnote\thanks
+    \null\vfil
+    \vskip 60\p@
+    \begin{center}%
+      {\LARGE \@title \par}%
+      \vskip 3em%
+      {\large
+        \lineskip .75em%
+        \begin{tabular}[t]{c}%
+          \@author
+        \end{tabular}\par}%
+      \vskip 1.5em%
+      {\large \@date \par}%
+    \end{center}\par
+    \@thanks
+    \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  \global\let\thanks\relax
+  \global\let\maketitle\relax
+  \global\let\@thanks\@empty
+  \global\let\@author\@empty
+  \global\let\@date\@empty
+  \global\let\@title\@empty
+  \global\let\title\relax
+  \global\let\author\relax
+  \global\let\date\relax
+  \global\let\and\relax
+}
+%%
+
+
+
 
 
 %multicol params
@@ -112,19 +162,14 @@
 \usepackage{varwidth}
 % ...
 
-
-
 \renewcommand\maketitlehooka{%
   \noindent\vrule height 2.5pt width \textwidth
 }
 
-
-%\newcommand{\wrappedauthor}[1]{\author{\seqsplit{#1}}}
 \let\oldauthor\author
 \renewcommand{\author}[1]{\oldauthor{\begin{varwidth}{\linewidth}\centering\strut#1\strut\end{varwidth}}}
 
 
-% {\color{lightgray}
 % Customize the title page
 \pretitle{% add some rules
   \begin{center}
@@ -135,13 +180,6 @@
   \noindent\vrule height 2.5pt width \textwidth
   \vskip .75em plus .25em minus .25em% increase the vertical spacing a bit, make this particular glue stretchier
 }
-
-
-%\newcommand\@shorttitle{}
-% define \theshorttitle to what is given
-%\newcommand\shorttitle[1]{\renewcommand\@shorttitle{#1}}
-
-
 \predate{%
   \begin{center}
     \Large
@@ -149,10 +187,6 @@
 \postdate{%
   \end{center}%
 }
-
-%\postdate{\vspace{2cm}\end{titlepage}\clearpage}
-
-
 
 % SHORT TITLE
 
@@ -162,12 +196,7 @@
 \newcommand{\shorttitle}[1]{\renewcommand{\@shorttitle}{#1}}
 \makeatother
 
-%\makeatletter
-%\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\@shorttitle}}
-%\makeatother
-%\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\expandafter\@shorttitle}}
-
-\setlength{\headheight}{25pt} % You may need to adjust this value
+\setlength{\headheight}{2pt} % You may need to adjust this value
 
 \fancyhf{}
 \fancyhead{}
@@ -175,12 +204,5 @@
 \fancyhead[LE,LO]{\textcolor{gray}{\@shorttitle}}
 \makeatother
 \fancyhead[RE,RO]{}
-\rfoot{\vspace{.51pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
-
-%\fancyhf{}
-%\fancyhead{}
-%\fancyhead[LE,LO]{\vspace{7pt}\textcolor{gray}{\@shorttitle}}
-%\fancyhead[RE,RO]{}
-%\rfoot{\vspace{.51pt}\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
-
+\rfoot{\Large \textcolor{gray}{Page \thepage \hspace{0.5pt} of \pageref{LastPage}}}
 
